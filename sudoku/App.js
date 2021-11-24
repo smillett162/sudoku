@@ -1,13 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import UserTextInput from './Components/UserTextInput';
+import { NativeBaseProvider , Center, Heading} from "native-base"
+
+
+import BoardComponents from './Components/BoardComponents';
 
 export default function App() {
   return (
     <>
-      <UserTextInput />
+      <NativeBaseProvider>
+        <Center flex={1} px="3" style={{marginBottom: 160}}>
+          <Heading style={{marginBottom: 20}}>Sudoku</Heading>
+          <BoardComponents />
+        </Center>
+      </NativeBaseProvider>
     </>
   );
 }
